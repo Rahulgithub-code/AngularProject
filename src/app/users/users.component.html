@@ -1,0 +1,66 @@
+<h2 class="head-title">Array and Object</h2>
+<div class="row" style="margin-top: 50px;">
+    <div class="col-sm-4" style="background-color:  rgb(247, 234, 234);">
+        <p class="TextPara">Object Data type</p>
+        <table border="2" class="TextTable">
+            <tr class="TextRow">
+                <td class="TextTdata">Name</td>
+                <td class="TextTdata">Age</td>
+                <td class="TextTdata">Address</td>
+            </tr>
+            <tr class="TextRow">
+                <td class="TextTdata">{{dataObject.Name}}</td>
+                <td class="TextTdata">{{dataObject.Age}}</td>
+                <td class="TextTdata">{{dataObject.Address}}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-sm-4" style="background-color:  rgb(247, 234, 234);">
+        <p class="TextPara"> Array of Object Data type</p>
+        <table border="2" class="TextTable">
+            <tr class="TextRow">
+                <td class="TextTdata">Id</td>
+                <td class="TextTdata">Name</td>
+                <td class="TextTdata">Age</td>
+                <td class="TextTdata">Address</td>
+                <td class="TextTdata">Edit</td>
+                <td class="TextTdata">Delete</td>
+
+            </tr>
+            <tr class="TextRow" *ngFor="let i of dataArray;let j=index">
+                <td class="TextTdata">{{j + 1}}</td>
+                <td class="TextTdata">{{i.Name}}</td>
+                <td class="TextTdata">{{i.Age}}</td>
+                <td class="TextTdata">{{i.Address}}</td>
+                <td><mat-icon (click)='ediit(j)' class="cursorIcon"> border_color</mat-icon></td>
+                <td><mat-icon (click)='delFunct(j)'>delete</mat-icon></td>
+            </tr>
+        </table>
+        
+    </div>
+    <div class="col-sm-4" style="background-color:  rgb(247, 234, 234);">
+        <p class="TextPara"> Add and Update Array of Object data</p>
+        <!-- <input type="text" name="Name" [(ngModel)]="objectData.Name" placeholder="Name"><br>
+        <input type="number" name="Age" [(ngModel)]="objectData.Age" placeholder="Age"><br>
+        <input type="text" name="Address" [(ngModel)]="objectData.Address" placeholder="Address">
+        <button type="button" (click)="SendData()">Send</button> -->
+        <form class="example-form" #formItems='ngForm' (ngSubmit)='SendItem(formItems)'>
+            <mat-form-field class="example-form">
+                <mat-label>Name</mat-label>
+                <input matInput type="text" name="Name" [(ngModel)]='newData.Name' placeholder="Name">
+            </mat-form-field>
+            <mat-form-field class="example-form">
+                <mat-label>Age</mat-label>
+                <input matInput type="number" name="Age" [(ngModel)]='newData.Age' placeholder="Age">
+            </mat-form-field>
+            <mat-form-field class="example-form">
+                <mat-label>Address</mat-label>
+                <input matInput type="text" name="Address" [(ngModel)]='newData.Address' placeholder="Address">
+            </mat-form-field>
+                <button class="BtnSty"  mat-raised-button color="primary" type="submit" [disabled]='SendBtn'>Save</button>
+                <button class="BtnSty"  mat-raised-button color="warn" type="reset" [disabled]='SendBtn'>Reset</button>
+                <button class="BtnSty"  mat-raised-button color="accent" type="button" [disabled]='updateBtn' (click)='updateSave()'>Update</button>
+                <mat-icon  class="closeIcon" *ngIf='cancelBtn' (click)='cancelBtnFuct()'>close</mat-icon>
+        </form>
+    </div>
+  </div>

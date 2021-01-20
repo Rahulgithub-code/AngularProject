@@ -1,0 +1,55 @@
+<h2 class="head-title">Anonymous function and Lemda function</h2>
+<div class="row">
+    <div class="col-md-6">
+        <p class="text">Multiplication using Anonymous function</p>
+      <div class="form-content">
+        <div class="form-input">
+        <form>
+            <div class="form-group">
+              <input type="text" #mulNum1 class="form-control" placeholder="num1">
+            </div>
+            <div class="form-group">
+              <input type="text" #mulNum2 class="form-control" placeholder="num2">
+            </div>
+          </form>
+        </div>
+        <div class="Button-group">
+            <button class="btn btn-info" (click)="anonFuncton(mulNum1.value,mulNum2.value)">Multiply</button>
+            <p class="result">Result ={{anonyMultResult}}</p>
+        </div>
+    </div>
+    </div>
+    <div class="col-md-6">
+        <p class="text">Multiplication using Lemda function</p>
+      <div class="form-content">
+        <div class="form-input">
+        <form>
+            <div class="form-group">
+              <input type="text" #lemNum1 class="form-control" placeholder="num1">
+            </div>
+            <div class="form-group">
+              <input type="text" #lemNum2 class="form-control" placeholder="num2">
+            </div>
+          </form>
+        </div>
+        <div class="Button-group">
+            <button class="btn btn-info" (click)="lemFunct(lemNum1.value,lemNum2.value)">Multiply</button>
+            <p class="result">Result ={{LemResult}}</p>
+        </div>
+    </div>
+    </div>
+</div>
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <p class="text">Function/Method OverLoading</p>
+    <div class="form-group">
+    <input type="Text" class="form-control" name="Value1" [(ngModel)]='value1' #para1='ngModel'>
+  </div>
+  <div class="form-group">
+    <input type="Number" class="form-control" name="Value2" [(ngModel)]='value2' #para2='ngModel'>
+  </div>
+    <button type="button" class="btn btn-info" (click)="OverLoadingFunct()"> OverLoad </button>  
+  </div>
+  <div class="col-md-4"></div>
+</div>

@@ -1,0 +1,66 @@
+<h2 class="head-title">Event's</h2>
+<div class="row">
+    <div class="col-md-4">
+        <p class="text">KeyUp event</p>
+        <input type="text" #input (keyup)="AlertBoxPara(input.value)"><br>
+        <span class="value">Value:</span>
+        <span class="inputValue">{{input.value}}</span><br>
+        <p class="text">
+            KeyDown event
+        </p>
+        <input type="text" #input1 (keydown)="AlertBoxPara(input1.value)"><br>
+        <span class="value">Value:</span>
+        <span class="inputValue">{{input1.value}}</span><br>
+    </div>
+    <div class="col-md-4">
+        <p class="text">
+            Control KeyUp event with Space Bar
+        </p>
+        <input type="text" #input2 (keyup.space)="AlertBoxPara(input2.value)"><br>
+        <span class="value">Value:</span>
+        <span class="inputValue">{{input2.value}}</span><br>
+        <p class="text">
+            Control KeyUp event with Enter Key
+        </p>
+        <input type="text" #input3 (keydown.enter)="AlertBoxPara(input3.value)"><br>
+        <span class="value">Value:</span>
+
+        <span class="inputValue">{{input3.value}}</span><br>
+    </div>
+    <div class="col-md-4">
+        <p class="text">
+            Mouse Event in Paragraph
+        </p>
+        <p style="background-color: cadetblue;" (mouseover)="AlertBoxPara('Mouse Over Event')">MouseOver</p>
+        <p style="background-color: cadetblue;" (mouseleave)="AlertBoxPara('Mouse Leave Event')">MouseLeave</p>
+        <p style="background-color: cadetblue;" (mouseup)="AlertBoxPara('Mouse Up Event')">MouseUp</p>
+        <p style="background-color: cadetblue;" (mousedown)="AlertBoxPara('Mouse Down Event')">MouseDown</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <p class="text">
+            Mouse Event in Paragraph
+        </p>
+        <p style="background-color: cadetblue;" (mouseout)="AlertBoxPara('Mouse Out Event')">MouseOut</p>
+        <p style="background-color: cadetblue;" (mouseenter)="AlertBoxPara('Mouse Enter Event')">MouseEnter</p>
+        <p style="background-color: cadetblue;" (mousewheel)="AlertBoxPara('Mouse Wheel Event')">MouseWheel</p>
+        <p style="background-color: cadetblue;" (mousemove)="AlertBoxPara('Mouse Move Event')">MouseMove</p>
+    </div>
+    <div class="col-md-4">
+        <p class="text">Blur Event</p>
+        <input type="text" (blur)="AlertBoxPara(value.value)" #value> 
+        <span class="inputValue">{{value.value}}</span>
+        <p class="text">Copy Event</p>
+        <textarea  cols="30" rows="1" placeholder="Enter something" (copy)="AlertBoxPara('You are coping something')"></textarea>
+        <p class="text">Cut Event</p>
+        <textarea  cols="30" rows="1" placeholder="Enter something" (cut)="AlertBoxPara('You are removing something')"></textarea>
+    </div>
+    <div class="col-md-4">
+        <p class="text">Paste Event</p>
+        <textarea  cols="30" rows="1" placeholder="Enter something" (paste)="AlertBoxPara('You are paste something')"></textarea>
+        <p class="text">Double Click Event</p>
+        <button type="button button2" (dblclick)="AlertBoxPara('DoubleClicked')">DoubleClick</button>
+    </div>
+
+</div>

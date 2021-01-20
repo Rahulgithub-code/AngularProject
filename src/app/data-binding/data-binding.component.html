@@ -1,0 +1,36 @@
+<h2 class="head-title">Data Binding</h2>
+<div class="row">
+    <div class="col-md-4">
+        <p class="text">{{print}} with String Interpolation</p>
+        <img src="{{itemImageUrl}}">
+    </div>
+    <div class="col-md-4">
+        <p class="text"> Template expressions -</p>
+          <p>The sum of 1+1 is {{1+1}}</p>
+    </div>
+    <div class="col-md-4">
+        <p class="text">{{print}} with Property Binding
+        </p>
+          <img [src]="itemImageUrl">
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <p class="text">Alert Box with Event Binding</p>
+            <button type="button" class="button button2" (click)="AlertBox()">Click</button>     
+    </div>
+    <div class="col-md-4">
+        <p class="text">
+            Change image using String interpolation and Event binding
+        </p>
+        <img class="image" src="{{imageUrl}}"><br>
+        <button class="button button2" (click)="changeImage()">Change</button>
+    </div>
+    <div class="col-md-4">
+        <p class="text">
+            Input field enable and disable using Property Binding
+        </p>
+        <input type="text" value={{inputValue}} [disabled]="inputBox" class="inBox"><br><br>
+        <button class="button button2" type="button" (click)="changeInputBox()">Enable / Disable</button>
+    </div>
+</div>

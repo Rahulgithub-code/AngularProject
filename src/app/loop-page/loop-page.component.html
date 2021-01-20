@@ -1,0 +1,54 @@
+<h2 class="head-title">For Loop, For..in Loop, While Loop & Do-While Loop</h2>
+<div class="row">
+    <div class="col-md-6">
+        <p class="text"> Factorial using For Loop </p>
+      <!-- <button (click)="FactFor()">Click</button> -->
+      <div class="form-content">
+          <div class="form-input">
+          <form>
+              <div class="form-group">
+                <input type="text" #num7 class="form-control" placeholder="Number">
+              </div>
+              <div>
+                  <input type="reset" class="form-control reset" value="C">
+                </div>
+            </form>
+          </div>
+          <div class="Button-group">
+              <button class="btn btn-info" (click)="FactFor(num7.value)">Factorial</button>
+              <p class="result">Result : <span class="fResult">{{fResult}}</span></p>               
+          </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+        <p class="text"> For...in Loop </p>
+      <button class="btn btn-info" (click)="forInLoopFunc()">For...in</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <p class="text">Factorial using while loop</p>
+      <div class="form-content">
+        <div class="form-input">
+        <form>
+            <div class="form-group">
+              <input type="text" #num9 class="form-control" placeholder="Number">
+            </div>
+            <div>
+                <input type="reset" class="form-control reset" value="C">
+              </div>
+          </form>
+        </div>
+        <div class="Button-group">
+            <button class="btn btn-info" (click)="whileFact(num9.value)">Factorial</button>
+            <p class="result">Result : <span class="fResult">{{whileFactResult}}</span></p>               
+        </div>
+    </div>
+    </div>
+    <div class="col-md-6">
+        <p class="text">do...While Loop</p>
+        
+            <button class="btn btn-info" (click)="doNumber()">do...While</button>
+  
+    </div>
+</div>

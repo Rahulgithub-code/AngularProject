@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-md-6">
+        <h2 class="head-title">1. Factorial program</h2>
+        <p class="detail"><b>Ex : -</b> 5!=5x4x3x2x1</p>
+        <mat-form-field class="example-full-width">
+        <input  matInput type="number" placeholder="Enter Value" [(ngModel)] = 'factValue' (keyup.enter)="factFunct()">
+    </mat-form-field>
+        <button mat-raised-button color="warn" class="btn" (click)="factFunct()">Factorial</button>
+        <p>Result: {{factResult}} </p>
+        
+    </div>
+    <div class="col-md-6">
+        <h2 class="head-title">2. Find Prime number</h2>
+        
+        <p class="detail"><b>Prime Number  :</b> Number is divisiable by 1 and itself.
+         <br> <b>Ex : -</b>  1,3,5,7,..... are prime numbers
+        </p>
+        <mat-form-field class="example-full-width">
+        <input  matInput type="number" placeholder="Enter Value" [(ngModel)] = 'primeValue' (keyup.enter)="primeFunct()">
+    </mat-form-field>
+        <button mat-raised-button color="warn" class="btn" (click)="primeFunct()">Prime</button>
+        <p>Result: {{primeResult}} </p>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col-md-6">
+        <h2 class="head-title">3. Find Palindrome number</h2>
+        
+        <p class="detail"><b>Palindrome Number :</b>  Reverse of given number is eqaul to same number .
+         <br> <b>Ex : -</b>  1551 is Palindrome number
+        </p>
+        <mat-form-field class="example-full-width">
+        <input  matInput type="number" placeholder="Enter Value" [(ngModel)] = 'palinValue' (keyup.enter)="palinFunct()">
+    </mat-form-field>
+        <button mat-raised-button color="warn" class="btn" (click)="palinFunct()">Palindrome</button>
+        <p>Result: {{palinResult}} </p>
+      </div>
+      <div class="col-md-6">
+        <h2 class="head-title">4. Find Fibonacci Series</h2>
+        
+        <p class="detail"><b>Fibonacci Series :</b>  Next number is the sum of previous two numbers .
+         <br> <b>Ex : -</b>   0, 1, 1, 2, 3, 5, 8, 13, 21 
+        </p>
+        <mat-form-field class="example-full-width">
+        <input  matInput type="number" placeholder="Enter Value" [(ngModel)] = 'fabonacciValue' (keyup.enter)="palinFunct()">
+    </mat-form-field>
+        <button mat-raised-button color="warn" class="btn" (click)="fabonacciFunct()">Fibonacci</button>
+        <p>Result: {{fabonacciResult}} </p>
+    </div>
+  </div>

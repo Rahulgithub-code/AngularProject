@@ -1,0 +1,75 @@
+<h2 class="head-title">ngIf, ngFor, ngSwitch</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <p class="text">ngIf in Paragraph</p>
+        <p *ngIf="isAvailable"> Condition is valid.</p>
+    </div>
+    <div class="col-md-4">
+        <p class="text">ngIf with ng-template</p>
+            <p *ngIf="isAvailable; else condition1"> Condition is valid.</p>
+            <ng-template #condition1>Condition is invalid</ng-template> 
+    </div>
+    <div class="col-md-4">
+        <p class="text">ngIf with defined value</p>
+            <p *ngIf="isAvailable==true">Condition is Valid</p>
+            <p *ngIf="isAvailable==false">Condition is Invalid</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <p class="text">Click Event change the value of isAvailable</p>
+            <button type="button button2" class="button button2" (click)="changeIsAvailable()">ChangeValue</button>
+    </div>
+    <div class="col-md-4">
+        <p class="text">ngFor in Buttom</p>
+            <select>
+                <option *ngFor='let i of months'>{{i}}</option>
+            </select>
+    </div>
+    <div class="col-md-4">
+        <p class="text">OnChange Event in DropDown button</p>
+            <select (change)="changeMonths()" >
+                <option *ngFor='let i of months'>{{i}}</option>
+            </select>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <p class="text">ngSwitch</p>
+        <div class="switchDiv" [ngSwitch]="color"> 
+        <p *ngSwitchCase="'red'" class="caseBlock1">Red Color</p>
+        <p *ngSwitchCase="'blue'" class="caseBlock2" >Blue Color</p>
+        <p *ngSwitchCase="'skyBlue'" class="caseBlock3">Sky Blue</p>
+        <p *ngSwitchDefault>Default Block</p>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <p class="text">ngFor</p>
+        <table border="2" style="margin-left: 5%;">
+            <thead>
+              <tr class="tdata">
+                <th class="tdata1">S No.</th>
+                <th class="tdata1">Name</th>
+                <th class="tdata1">Price</th>
+                <th class="tdata1">Quantity</th>
+                <th class="tdata1">First, Last, Even & Odd</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="tdata" *ngFor="let fruit of fruits; let i=index; first as isFirst; last as isLast; even as isEven; odd as isOdd; trackBy: trackByFn count as totalCount" >
+                  <td>{{i+1}} of {{totalCount}}</td>
+                <td>{{ fruit.name }}</td>
+                <td>{{ fruit.price }}</td>
+                <td>{{ fruit.quantity }}</td>
+                <td>
+                    IsFirst: <b>{{isFirst}}</b>
+                    IsLast: <b>{{isLast}}</b>
+                    IsEven: <b>{{isEven}}</b>
+                    IsOdd: <b>{{isOdd}}</b>
+              </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>

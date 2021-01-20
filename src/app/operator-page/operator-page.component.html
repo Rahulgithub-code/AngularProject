@@ -1,0 +1,64 @@
+<h2 class="head-title">Operator's</h2>
+<div class="row" style="margin-top: 50px;">
+    <div class="col-sm-4" style="background-color:  rgb(247, 234, 234);">
+        <p class="text"> Comparison using Relational Operator</p>
+        <div class="form-content">
+            <div class="form-input">
+            <form class="was-validated">
+                <div class="form-group">
+                  <input type="text" #num3 class="form-control" placeholder="Num 1">
+                  
+                </div>
+                <div class="form-group">
+                  <input type="text" #num4 class="form-control" placeholder="Num 2">
+                </div>
+              </form>
+            </div>
+            <div class="Button-group">
+                <button class="btn btn-info" (click)="rOperator(num3.value,num4.value)">Compare</button>
+                <p class="result">Result : <span class="cResult">{{compare}}</span></p>               
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4" style="background-color:  rgb(247, 234, 234);">
+        <p class="text"> Comparison using Conditional Operator / Ternary Operator</p>
+        <div class="form-content">
+            <div class="form-input">
+            <form>
+                <div class="form-group">
+                  <input type="text" #num5 class="form-control" placeholder="Num 1">
+                </div>
+                <div class="form-group">
+                  <input type="text" #num6 class="form-control" placeholder="Num 2">
+                </div>
+              </form>
+            </div>
+            <div class="Button-group">
+                <button class="btn btn-info" (click)="cOperator(num5.value,num6.value)">Compare</button>
+                <p class="result">Result : <span class="cResult">{{cResult}}</span></p>               
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4" style="background-color:  rgb(247, 234, 234);">
+        <p class="text">
+            Even Odd using Relational operator
+          </p>
+          <div class="form-content">
+            <div class="form-input">
+            <form>
+                <div class="form-group">
+                  <input type="text" #num8 class="form-control" placeholder="Number">
+                </div>
+                <div>
+                    <input type="reset" class="form-control reset" value="C">
+                  </div>
+              </form>
+            </div>
+            <div class="Button-group">
+                <button class="btn btn-info" (click)="oddEvenFunc(num8.value)">Find</button>
+                <p class="result">Result : <span class="fResult">{{oddEvenResult}}</span></p>               
+            </div>
+        </div>
+    </div>
+  </div>
+

@@ -1,0 +1,18 @@
+<h2 class="head-title">Pipe</h2>
+<div class="row">
+    <div class="col-md-6">
+        <p class="text">Date-</p>
+            <p><b> Today is {{ time | date}}</b></p>
+            <p><b> Today is {{ time | date:'fullDate'}} [Full Date]</b></p>
+            <p> <b>Today is {{ time | date | uppercase}} [UpperCase]</b></p>
+    </div>
+    <div class="col-md-6">
+        <p class="text">Currency, Date, Percentage</p>
+            <p>
+            <b>{{6589.23 | currency:"USD"}}</b><br>
+            <b>{{time | date:'d/M/y'}}</b><br>
+            <b>{{time | date:'shortTime'}}</b> <br>
+            <b>{{00.54565 | percent}}</b>
+            
+    </div>
+</div>

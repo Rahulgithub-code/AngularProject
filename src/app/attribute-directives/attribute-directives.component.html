@@ -1,0 +1,36 @@
+<h2 class="head-title">ngStyle, ngClass</h2>
+<div class="row">
+    <div class="col-md-4">
+        <p class="text">ngStyle in Paragraph</p>
+        <p [ngStyle]="{'background-color':'green'}">Paragraph area</p>
+    </div>
+    <div class="col-md-4">
+        <p class="text">ngClass with Object</p>
+        <div class="container">
+            <div *ngFor="let car of cars" [ngClass]=
+            "{'alert-primary': car.name ==='Mg Hector',
+            'alert-secondary':car.name === 'Ford',
+            'alert-success':car.name === 'Kia',
+            'alert-danger':car.name === 'BMW',
+            'alert-warning':car.name === 'Jaguar',
+            'alert-info':car.name === 'Suzuki'}">
+                {{car.name}}
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-4">
+        <p class="text">ngStyle</p>
+        <div *ngFor="let person of people" class="item" [ngStyle]="{'color': getColor(person.country)}" >
+            {{person.name}} ({{person.country}})
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+       <p class="text"> [style.color]</p>
+       <div *ngFor="let person of people" class="item" [style.color]="getColor(person.country)">
+        {{person.name}} ({{person.country}})
+    </div>
+    </div>
+</div>

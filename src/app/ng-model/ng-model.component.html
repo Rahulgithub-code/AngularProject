@@ -1,0 +1,41 @@
+<h2 class="head-title">ngModel</h2>
+<div class="row">
+    <div class="col-md-4">
+        <p class="text">ngModel</p>
+        <input type="text" [(ngModel)]='name' #id='ngModel' required>
+        <p>Value: {{ name }}</p>
+        <p>valid: {{id.valid}}</p>
+        <button (click)="setValue()">Set Value</button>
+        
+    </div>
+    <div class="col-md-4">
+        <p class="text">ngModel with ngForm</p>
+        <form #it="ngForm" (ngSubmit)="onSubmit(it)">
+            <input type="text" name="firstName" ngModel #first='ngModel' required>
+            <input type="text" name="lastName" ngModel #last='ngModel' required>
+            <button>Submit</button>
+        </form>
+        <p>First name value: {{first.value}}</p>
+        <p>First name valid: {{first.valid}}</p>
+    </div>
+    <div class="col-md-4">
+        <p class="text">Manual Two way binding</p>
+        <input type="text" [value]='value' (input)="value=$event.target.value">
+        <p>You entered:  {{value}}</p>
+        <button (click)="clearValue()">Clear</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+       <p class="text"> Two way binding with ngSwitch</p>
+       <select [(ngModel)]='selectedValue' >
+        <option *ngFor='let i of items' [value]="i.name">{{i.name}}</option>
+    </select>
+    {{selectedValue}}
+    <div [ngSwitch]="selectedValue" style="padding: 15px;">
+        <div *ngSwitchCase="'One'" >One is pressed</div>
+        <div *ngSwitchCase="'Two'">Two is selected</div>
+        <div *ngSwitchDefault> Default Option</div>
+    </div>
+    </div>
+</div>

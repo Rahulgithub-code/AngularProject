@@ -1,0 +1,65 @@
+
+<h2 class="head-title">Default Parameter, Optional Parameter, Rest Parameter</h2>
+<div class="row">
+    <div class="col-md-6">
+        <p class="text">Default Parameter</p>
+      <div class="form-content">
+        <div class="form-input">
+        <form>
+            <div class="form-group">
+              <input type="text" #cityName class="form-control" placeholder="CityName">
+            </div>
+          </form>
+        </div>
+        <div class="Button-group">
+            <button class="btn btn-info" (click)="dParam(cityName.value)">Show</button>
+                          
+        </div>
+    </div>
+    </div>
+    <div class="col-md-6">
+        <p class="text"> Optional Parameter's</p>
+      <div class="form-content">
+        <div class="form-input">
+        <form>
+            <div class="form-group">
+              <input type="text" #param1 class="form-control" placeholder="Param1">
+            </div>
+            <div class="form-group">
+              <input type="text" #param2 class="form-control" placeholder="Param2">
+            </div>
+            <div class="form-group">
+              <input type="text" #param3 class="form-control" placeholder="Param3">
+            </div>
+          </form>
+        </div>
+        <div class="Button-group">
+            <button class="btn btn-info" (click)="optParam(param1.value,param2.value,param3.value)">Pass Value</button>
+                          
+        </div>
+    </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <p class="text">Rest Parameter</p>
+      <input type="text" #value1 placeholder="Value1">
+      <input type="text" #value2 placeholder="Value2">
+      <input type="text" #value3 placeholder="Value3">
+      <input type="text" #value4 placeholder="Value4">
+      <input type="text" #value5 placeholder="Value5">
+      <input type="text" #value6 placeholder="Value6">
+      <button class="btn btn-info" (click)="restParam(value1.value,value2.value,value3.value,value4.value,value5.value,value6.value)">RestParameter</button>
+    </div>
+    <div class="col-md-6">
+        <p class="text">Addition Using Rest Parameter</p>
+      <input type="text" #value7 placeholder="Value1">
+      <input type="text" #value8 placeholder="Value2">
+      <input type="text" #value9 placeholder="Value3">
+      <input type="text" #value10 placeholder="Value4">
+      <input type="text" #value11 placeholder="Value5">
+      <input type="text" #value12 placeholder="Value6">
+      <button class="btn btn-info" (click)="restAdd(value7.value,value8.value,value9.value,value10.value,value11.value,value12.value)">ADD</button>
+      <p class="result">Result ={{restAddResult}}</p>
+    </div>
+</div>

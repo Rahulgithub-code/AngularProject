@@ -1,0 +1,36 @@
+<h2 class="head-title">OOPs and Arithmetic Operation using OPPs</h2>
+<div class="row" style="margin-top: 50px;">
+    <div class="col-sm-6" style="background-color:  rgb(247, 234, 234);">
+      <p class="text">OOPs concept in Console log</p>
+      <div class="task">
+          <button type="button" class="btn btn-primary" (click)="printConsole()">OOPs</button>
+    </div>
+    </div>
+    <div class="col-sm-6" style="background-color:  rgb(247, 234, 234);">
+      <p class="text">Calculator using OOPs concept</p>
+        <div class="form-content">
+        <div class="form-input">
+        <form>
+            <div class="form-group">
+              <input type="text" #num1 class="form-control" placeholder="Num 1">
+            </div>
+            <div class="form-group">
+              <input type="text" #num2 class="form-control" placeholder="Num 2">
+            </div>
+            <div>
+                <input  type="reset" #num2 class="form-control reset" value="C">
+              </div>
+          </form>
+        </div>
+        <div class="Button-group">
+            <button class="btn btn-info" (click)="operatorAdd(num1.value,num2.value)">+</button>
+            <button class="btn btn-info" (click)="operatorSub(num1.value,num2.value)">-</button>
+            <button class="btn btn-info" (click)="operatorMul(num1.value,num2.value)">*</button>
+            <button class="btn btn-info" (click)="operatorDiv(num1.value,num2.value)">/</button>
+            <button class="btn btn-info" (click)="operatorMod(num1.value,num2.value)">%</button>
+            <p class="result">Result = {{newResult}}</p>
+            
+        </div>
+    </div>
+    </div>
+  </div>
