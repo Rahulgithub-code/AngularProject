@@ -34,17 +34,19 @@ OverLoadingFunct(){
   console.log(typeof(this.value2))
   console.log(this.value1)
   console.log(this.value2)
-  add(this.value1,this.value2)
+  add(parseInt(this.value1),parseInt(this.value2))
 }
+
 }
+
 function add(a:string, b:string):string;
 function add(a:number, b:number):number
 function add(a:any,b:any):any {
-  if(typeof(a)=='string' && typeof(b)=='string'){
+  if(typeof(a)==='string' && typeof(b)==='string'){
     console.log("Im from 1st function")
     alert("Im from 1st function")
   }
-  else if (typeof(a)=='number' && typeof(b)=='number'){
+  else if (typeof(a)==='number' && typeof(b)==='number'){
     console.log("Im from 2nd function")
     alert("Im from 2nd function")
   }

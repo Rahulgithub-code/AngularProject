@@ -16,6 +16,8 @@ export class DataBindingComponent implements OnInit {
   imageUrl="/assets/images/linux.png"
   inputBox:boolean;
   inputValue="Enter here"
+  colspan:number=3
+  border:number=3
 
   //Function declaration
   AlertBox(){

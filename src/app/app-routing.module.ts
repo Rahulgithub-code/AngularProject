@@ -19,6 +19,8 @@ import { NgModelComponent } from './ng-model/ng-model.component';
 import { FormExampleComponent } from './form-example/form-example.component';
 import { CustomDirectiveComponent } from './custom-directive/custom-directive.component';
 import { ProgramsComponent } from './programs/programs.component';
+import { ServerSideRouteComponent } from './server-side-route/server-side-route.component';
+import { ServerRouteComponent } from './server-route/server-route.component';
 
 
 const routes: Routes = [
@@ -41,6 +43,8 @@ const routes: Routes = [
   { path: 'formExample', component: FormExampleComponent},
   { path: 'custom-directive', component: CustomDirectiveComponent},
   { path: 'programs', component: ProgramsComponent},
+  { path: 'server-side-route', component: ServerSideRouteComponent},
+  { path: 'server-side', component: ServerRouteComponent},
 
   { path: '**', component: ErrorPageComponent},
 ];

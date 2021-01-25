@@ -45,7 +45,7 @@
         </div>
     </div>
     <div class="col-md-8">
-        <p class="text">ngFor</p>
+        <p class="text">ngFor with local veriable's</p>
         <table border="2" style="margin-left: 5%;">
             <thead>
               <tr class="tdata">
@@ -57,8 +57,8 @@
               </tr>
             </thead>
             <tbody>
-              <tr class="tdata" *ngFor="let fruit of fruits; let i=index; first as isFirst; last as isLast; even as isEven; odd as isOdd; trackBy: trackByFn count as totalCount" >
-                  <td>{{i+1}} of {{totalCount}}</td>
+              <tr class="tdata" *ngFor="let fruit of fruits; let i=index; first as isFirst; last as isLast; even as isEven; odd as isOdd">
+                  <td>{{i+1}}</td>
                 <td>{{ fruit.name }}</td>
                 <td>{{ fruit.price }}</td>
                 <td>{{ fruit.quantity }}</td>
@@ -72,4 +72,34 @@
             </tbody>
           </table>
     </div>
+</div>
+<div class=row>
+    <div class="col-md-6">
+        <p class="text">ngFor with trackBy</p>
+        <table border="2" style="margin-left: 25%;">
+            <tr class="tdata">
+                <th class="tdata1">Id</th>
+                <th class="tdata1">Name</th>
+                <th class="tdata1">Price</th>
+                <th class="tdata1">Quantity</th>
+            </tr>
+            <tr *ngFor="let f of fruitsNew; trackBy: trackById">
+                <th>{{f.id}}</th>
+                <th>{{f.name}}</th>
+                <th>{{f.price}}</th>
+                <th>{{f.quantity}}</th>
+            </tr>
+        </table>
+        <button (click)="getMoreFruit()">Add More Fruits</button>  
+    </div>
+    <div class="col-md-6">
+        <p class="text">Grouping with *ngFor</p>
+        <ul *ngFor='let group of countryDetails'>
+                <li>{{group.name}}</li>
+                <ul *ngFor='let person of group.person'>
+                   <li>{{person.name}}</li> 
+                </ul>      
+        </ul>
+    </div>
+    
 </div>

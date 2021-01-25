@@ -27,10 +27,30 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-4">
        <p class="text"> [style.color]</p>
        <div *ngFor="let person of people" class="item" [style.color]="getColor(person.country)">
         {{person.name}} ({{person.country}})
     </div>
     </div>
+    <div class="col-md-4">
+       <p class="text"> ngClass with string</p>
+       <p [ngClass]="'one two'">With String</p>
+
+    </div>
+    <div class="col-md-4">
+       <p class="text"> ngClass with Array</p>
+       <p [ngClass]="['three', 'four']">With Array</p>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-md-6">
+       <p class="text"> ngClass with Object</p>
+       <p [ngClass]="{'one': true,'two': false}">With Object</p>
+    </div>
+    <div class="col-md-6">
+        <p class="text"> ngClass with component method</p>
+        <p [ngClass]="setNgClassValue('mode')">With component method</p>
+     </div>
 </div>

@@ -2,17 +2,40 @@
 <div class="row">
     <div class="col-md-6">
         <p class="text">Date-</p>
-            <p><b> Today is {{ time | date}}</b></p>
-            <p><b> Today is {{ time | date:'fullDate'}} [Full Date]</b></p>
-            <p> <b>Today is {{ time | date | uppercase}} [UpperCase]</b></p>
+        <p> Today is {{ time }}</p>
+            <p> Today is {{ time | date}}</p>
+            <p>Today is {{ time | date:'fullDate'}} [Full Date]</p>
+            <p>Today is {{ time | date | uppercase}} [UpperCase]</p>
     </div>
     <div class="col-md-6">
         <p class="text">Currency, Date, Percentage</p>
             <p>
-            <b>{{6589.23 | currency:"USD"}}</b><br>
-            <b>{{time | date:'d/M/y'}}</b><br>
-            <b>{{time | date:'shortTime'}}</b> <br>
-            <b>{{00.54565 | percent}}</b>
-            
+            {{6589 | currency:"INR" :true}}<br>
+           {{time | date:'d/M/y'}}<br>
+           {{time | date:'shortTime'}}<br>
+            {{00.54565 | percent}}
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <p class="text">Json Pipe -</p>
+        {{emp  |slice:0:1 | json}}
+    </div>
+    <div class="col-md-6">
+        <p class="text">Custom Pipe -</p>
+        <table border="2" style="height: 100px; width: 400px;">
+            <tbody >
+                <tr>
+                    <th>Code</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                </tr>
+                <tr *ngFor='let emp of employee'>
+                    <td>{{emp.code}}</td>
+                    <td>{{emp.name | mypipe:emp.gender}}</td>
+                    <td>{{emp.gender}}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>

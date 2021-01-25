@@ -33,6 +33,9 @@ import { CustomDirective } from './custom.directive';
 import { CustomDirectiveComponent } from './custom-directive/custom-directive.component';
 import { ProgramsComponent } from './programs/programs.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { MypipePipe } from './mypipe.pipe';
+import { ServerSideRouteComponent } from './server-side-route/server-side-route.component';
+import { ServerRouteComponent } from './server-route/server-route.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +59,10 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     FormExampleComponent,
     CustomDirective,
     CustomDirectiveComponent,
-    ProgramsComponent
+    ProgramsComponent,
+    MypipePipe,
+    ServerSideRouteComponent,
+    ServerRouteComponent
   ],
   imports: [
     BrowserModule,
@@ -75,4 +81,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(){
+    console.log("I'm from App Module class")
+  }
+ }

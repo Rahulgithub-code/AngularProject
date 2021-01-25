@@ -65,4 +65,21 @@ export class AttributeDirectivesComponent implements OnInit {
         return 'red';
     }
   }
+
+  setNgClassValue(flag){
+    let ngClassCss=flag
+    if(flag=='mode'){
+      ngClassCss={
+        'one': true,
+        'two':true
+      }
+    }
+    else{
+      ngClassCss={
+        'one':false,
+        'two':false
+      }
+    }
+    return ngClassCss;
+  }
 }

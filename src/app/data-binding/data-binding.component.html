@@ -28,9 +28,26 @@
     </div>
     <div class="col-md-4">
         <p class="text">
-            Input field enable and disable using Property Binding
+            Attribute binding
         </p>
-        <input type="text" value={{inputValue}} [disabled]="inputBox" class="inBox"><br><br>
-        <button class="button button2" type="button" (click)="changeInputBox()">Enable / Disable</button>
+        <table [attr.border]="border" style="height: 200px; width: 400px;">
+            <tbody>
+                <tr>
+                    <th [attr.colspan]="colspan">Student</th>
+
+                </tr>
+                <tr>
+                    <td>Id</td>
+                    <td>Name</td>
+                    <td>Course</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Rahul</td>
+                    <td>B.Tech</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
+      
 </div>

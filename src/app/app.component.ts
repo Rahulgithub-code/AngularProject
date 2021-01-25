@@ -62,7 +62,12 @@ export class AppComponent {
     {
       route: '/events',
       icon: 'home',
-      title: 'Events'
+      title: 'Event Binding'
+    },
+    {
+      route: '/ngModel',
+      icon: 'home',
+      title: 'Two way binding'
     },
     {
       route: '/pipe',
@@ -85,9 +90,9 @@ export class AppComponent {
       title: 'Custom Directives'
     },
     {
-      route: '/ngModel',
+      route: '/server-side-route',
       icon: 'home',
-      title: 'ngModel'
+      title: 'Server-Side-Route'
     },
     {
       route: '/formExample',
