@@ -21,6 +21,7 @@ import { CustomDirectiveComponent } from './custom-directive/custom-directive.co
 import { ProgramsComponent } from './programs/programs.component';
 import { ServerSideRouteComponent } from './server-side-route/server-side-route.component';
 import { ServerRouteComponent } from './server-route/server-route.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 
 const routes: Routes = [
@@ -45,7 +46,8 @@ const routes: Routes = [
   { path: 'programs', component: ProgramsComponent},
   { path: 'server-side-route', component: ServerSideRouteComponent},
   { path: 'server-side', component: ServerRouteComponent},
-
+  { path: 'reactive-form', component: ReactiveFormComponent},
+  
   { path: '**', component: ErrorPageComponent},
 ];
 

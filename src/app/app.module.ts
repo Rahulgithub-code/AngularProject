@@ -36,6 +36,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { MypipePipe } from './mypipe.pipe';
 import { ServerSideRouteComponent } from './server-side-route/server-side-route.component';
 import { ServerRouteComponent } from './server-route/server-route.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import {ReactiveFormsModule} from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -62,7 +64,8 @@ import { ServerRouteComponent } from './server-route/server-route.component';
     ProgramsComponent,
     MypipePipe,
     ServerSideRouteComponent,
-    ServerRouteComponent
+    ServerRouteComponent,
+    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,
@@ -77,6 +80,7 @@ import { ServerRouteComponent } from './server-route/server-route.component';
     MatSidenavModule,
     MatListModule,
     MatProgressBarModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

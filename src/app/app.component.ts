@@ -100,6 +100,11 @@ export class AppComponent {
       title: 'Template-driven Form'
     },
     {
+      route: '/reactive-form',
+      icon: 'home',
+      title: 'Reactive Form'
+    },
+    {
       route: '/programs',
       icon: 'home',
       title: "Program's"

@@ -14,7 +14,7 @@ export class FormExampleComponent implements OnInit {
   ngOnInit(): void {
   }
   getValue(formData:NgForm){
-    console.log(formData)
+    console.log(formData.value)
   }
 
 }
