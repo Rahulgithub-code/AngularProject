@@ -24,14 +24,14 @@ export class ReactiveFormComponent implements OnInit {
 
     // })
 
-    // *** Form with Validation  ***
-    this.regForm= formbuilder.group({
+    /**  Form with Validation  */
+     this.regForm= formbuilder.group({
       Name: ['', [Validators.required, Validators.maxLength(10)]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
       cpassword: ['', Validators.required]
     })
-    
+
   }
 
   ngOnInit(): void {
@@ -45,10 +45,24 @@ export class ReactiveFormComponent implements OnInit {
   }
   reset(){
     this.regForm.reset();    //normal reset
-    // this.regForm.reset({       //reset with assign value 
-    //   email: 'xyz@mail.com'
-    // });
-
+   /**  this.regForm.reset({       //reset with assign value 
+      email: 'xyz@mail.com'
+    });
+    
+  */
   }
+  fill(){
+    this.regForm.setValue({       //must assign all field value
+      Name: 'Rahul',
+      email: 'rahulkr.mits@gmail.com',
+      password: 1234,
+      cpassword: 1234
+    })
 
+    /**this.regForm.patchValue({   //not required for assign all field value
+      Name: 'Rahul',
+      password: 1234,
+      cpassword: 1234
+    })*/
+  } 
 }
