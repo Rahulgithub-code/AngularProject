@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, FormBuilder, Validators} from '@angular/forms'
+import { formsignup } from '../formsignup';
 
 @Component({
   selector: 'app-reactive-form',
@@ -35,6 +36,32 @@ export class ReactiveFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    /** this.regForm.get('Name').valueChanges.subscribe(   // valueChanges on specific field
+      uname => {
+        console.log('Name changes :'+uname)
+      }
+    )*/ 
+
+   /**  this.regForm.valueChanges.subscribe(      // valueChanges on all field
+      (formData:formsignup)=>{
+        console.log('Name changes: '+ formData.Name)
+        console.log('email changes: '+ formData.email)
+        console.log('password changes: '+ formData.password)
+        console.log('cpassword changes: '+ formData.cpassword)
+      }
+    )*/
+
+   /**  this.regForm.get('Name').statusChanges.subscribe(   // statusChanges on specific field
+      uname => {console.log('Name :' + uname)}
+    )*/
+
+   /** this.regForm.statusChanges.subscribe(       // statusChanges on form status
+      form => {
+        console.log('Form status: ' + form)
+      }
+    )*/
+
   }
   onClickBtn(regForm:any){
     console.log(regForm.controls) 

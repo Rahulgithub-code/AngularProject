@@ -20,7 +20,7 @@
              <div class="form-group">
               <label class="control-label col-sm-2">Password : </label>            
               <div class="col-sm-10">
-                  <input type="password" class="form-control" placeholder="Password" formControlName='password'>
+                  <input type="password" class="form-control" placeholder="Password" formControlName='password'autocomplete >
                <span *ngIf='!regForm.controls.password.valid && regForm.controls.password.touched'>Password is Required</span>
 
               </div>
@@ -28,7 +28,7 @@
              <div class="form-group">
               <label class="control-label col-sm-2">Confirm Password : </label>            
               <div class="col-sm-10">
-                  <input type="password" class="form-control" placeholder="Confirm Password" formControlName='cpassword'>
+                  <input type="password" class="form-control" placeholder="Confirm Password" formControlName='cpassword' autocomplete>
                <span *ngIf='regForm.controls.password.value!== regForm.controls.cpassword.value && regForm.controls.cpassword.touched'>Password doesn't match</span>
                   
               </div>
