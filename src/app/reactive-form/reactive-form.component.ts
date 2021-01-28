@@ -8,10 +8,10 @@ import {FormControl, FormGroup, FormBuilder, Validators} from '@angular/forms'
 })
 export class ReactiveFormComponent implements OnInit {
   regForm:FormGroup;
-  // Name:string
-  // email:string
-  // password:string
-  // cpassword:string
+   Name:string
+   email:string
+   password:string
+   cpassword:string
 
 
   constructor(formbuilder: FormBuilder) { 
@@ -31,12 +31,23 @@ export class ReactiveFormComponent implements OnInit {
       password: ['', Validators.required],
       cpassword: ['', Validators.required]
     })
+    
   }
 
   ngOnInit(): void {
   }
   onClickBtn(regForm:any){
-    console.log(regForm.controls)
+    console.log(regForm.controls) 
+    this.Name=this.regForm.get('Name').value;  // get only specific field value 
+    console.log(this.Name);
+    console.log(this.regForm.value)  // get all field value
+
+  }
+  reset(){
+    this.regForm.reset();    //normal reset
+    // this.regForm.reset({       //reset with assign value 
+    //   email: 'xyz@mail.com'
+    // });
 
   }
 

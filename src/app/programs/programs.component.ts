@@ -70,8 +70,27 @@ palinFunct(){
 
 //start Fibonacci series 
 fabonacciValue;
-fabonacciResult;
-fabonacciFunct(){}
+fabonacciResult:any[]=[];
+fabonacciFunct(){
+  var f=0, l=1, next=null, no:number=parseInt(this.fabonacciValue), series:any[]=[]
+  for(let i=0; i<no; i++){
+    if(i<=0){
+      next = i
+    }
+    else{
+      next = f+l;
+      f=l
+      l=next
+    }
+    series.push(next)
+    
+  }
+  this.fabonacciResult = series
+
+}
+
+
+
 //end Fibonacci series
 
 

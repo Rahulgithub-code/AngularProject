@@ -35,7 +35,8 @@
              </div>
              <div class="form-group">            
               <div class="col-sm-offset-2 col-sm-10">
-                  <button type="submit" class="btn btn-primary" placeholder="Confirm Password" [disabled]='!regForm.valid || regForm.controls.password.value!== regForm.controls.cpassword.value'>Submit</button>
+                  <button type="submit" class="btn btn-primary"  [disabled]='!regForm.valid || regForm.controls.password.value!== regForm.controls.cpassword.value'>Submit</button>
+                  <button type="button" class="btn btn-primary" (click)='reset()'>Reset</button>
               </div>
              </div>
         </form>
