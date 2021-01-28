@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, FormBuilder, Validators} from '@angular/forms'
+import {FormControl, FormGroup, FormBuilder, Validators, FormArray} from '@angular/forms'
 import { formsignup } from '../formsignup';
 
 @Component({
@@ -61,6 +61,28 @@ export class ReactiveFormComponent implements OnInit {
         console.log('Form status: ' + form)
       }
     )*/
+
+    const arr = new FormArray([
+      new FormControl('Rahul', Validators.maxLength(5)),
+      new FormControl('Kumar')
+    ])
+    console.log(arr.value)  // get FormArray value
+    console.log(arr.status) // FormArray status
+    
+    const arr1 =new FormArray([
+      new FormControl(),
+      new FormControl()
+    ])
+    arr1.setValue(['A','B'])
+    console.log(arr1.value)
+    arr1.patchValue(['Name'])
+    console.log(arr1.value)
+    arr1.reset()
+    console.log(arr1.value)
+    arr1.reset([
+      'Kumar'
+    ])
+    console.log(arr1.value)
 
   }
   onClickBtn(regForm:any){
