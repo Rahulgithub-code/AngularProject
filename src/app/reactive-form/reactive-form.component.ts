@@ -62,7 +62,7 @@ export class ReactiveFormComponent implements OnInit {
       }
     )*/
 
-    const arr = new FormArray([
+  /**   const arr = new FormArray([
       new FormControl('Rahul', Validators.maxLength(5)),
       new FormControl('Kumar')
     ])
@@ -82,7 +82,7 @@ export class ReactiveFormComponent implements OnInit {
     arr1.reset([
       'Kumar'
     ])
-    console.log(arr1.value)
+    console.log(arr1.value)*/
 
   }
   onClickBtn(regForm:any){
@@ -101,6 +101,7 @@ export class ReactiveFormComponent implements OnInit {
   */
   }
   fill(){
+    debugger
     this.regForm.setValue({       //must assign all field value
       Name: 'Rahul',
       email: 'rahulkr.mits@gmail.com',

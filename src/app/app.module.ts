@@ -37,7 +37,10 @@ import { MypipePipe } from './mypipe.pipe';
 import { ServerSideRouteComponent } from './server-side-route/server-side-route.component';
 import { ServerRouteComponent } from './server-route/server-route.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
-import {ReactiveFormsModule} from '@angular/forms'
+import {ReactiveFormsModule} from '@angular/forms';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -80,7 +83,10 @@ import {ReactiveFormsModule} from '@angular/forms'
     MatSidenavModule,
     MatListModule,
     MatProgressBarModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatRadioModule,
+    MatCheckboxModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,3 +8,17 @@ input.ng-invalid.ng-touched{
 .pMsg{
     color: red
 }
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+  }
+  .check-margin{
+      margin-left: 16px;
+  }
+  
+  .custom-tooltip {
+      font-size: 18px;
+
+}
+button{
+    margin: 10px;
+}

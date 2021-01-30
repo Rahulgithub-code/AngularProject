@@ -1,6 +1,6 @@
-<div class="row">
+<div class="row" [style.display]="example1">
     <div class="col-md-12">
-        <h2 class="head">Registration Form with validation (Template Driven Form)</h2>
+        <h2 class="head">Registration Form with validation (Template Driven Form) <button type="button" class=" btn btn-primary" (click)='enableExample2()'>Example 2</button></h2> 
         <form class="form-horizontal" #formData='ngForm' (ngSubmit)='getValue(formData)' required>
           <div class="form-group">
            <label class="control-label col-sm-2">Name : </label>            
@@ -35,4 +35,60 @@
              </div>
         </form>
     </div>
+</div>
+<div class="row" [style.display]="example2">
+    <div class="col-md-12">
+        <h2 class="head">Registration Form with validation using User Class <button class=" btn btn-primary" (click)='enableExample1()'>Example 1</button></h2> 
+        <form class="form-horizontal" #userForm= 'ngForm' (ngSubmit)='onFormSubmit(userForm)'>
+          <div class="form-group">
+           <label class="control-label col-sm-2">Name : </label>            
+           <div class="col-sm-10">
+               <input type="text" class="form-control" placeholder="Name" name="name" required [ngModel]='user.name'>
+           </div>
+          </div>
+          <div class="form-group">
+              <label class="control-label col-sm-2">Email : </label>            
+              <div class="col-sm-10">
+                  <input type="email" class="form-control" placeholder="Email" name="email" required [ngModel]='user.email'>   
+              </div>
+             </div>
+             <div class="form-group">
+             <label class="control-label col-sm-2">Gender :</label> 
+             <mat-radio-group aria-label="Select an option" name='gender' required [ngModel]='user.gender'>
+                <mat-radio-button color='warn' value="male">Male</mat-radio-button>
+                <mat-radio-button color='warn' value="female">Female</mat-radio-button>
+              </mat-radio-group>
+            </div>
+            <div class="form-group">
+             <label class="control-label col-sm-2">If Married :</label>   
+                <mat-checkbox class="example-margin"  color='warn' name='married' [ngModel]='user.isMarried'></mat-checkbox>
+            </div>
+             <div class="form-group">
+              <label class="control-label col-sm-2">Password : </label>            
+              <div class="col-sm-10">
+                  <input type="password" class="form-control" placeholder="Password" name="password" required [ngModel]='user.password' autocomplete>
+              </div>
+             </div>
+             <div class="form-group">
+              <label class="control-label col-sm-2">Confirm Password : </label>            
+              <div class="col-sm-10">
+                  <input type="password" class="form-control" placeholder="Confirm Password" name="cpassword" required [ngModel]='user.cpassword' autocomplete>
+                  
+              </div>
+             </div>
+             <div class="form-group">
+                <mat-checkbox class="example-margin check-margin" color='warn' name='tc' required [ngModel]='user.isTCAccepted'></mat-checkbox>
+                <label class="control-label col-sm-4">I agree to the <a class="term" style="text-decoration:none" [matTooltip]="term" matTooltipPosition='above' matTooltipClass='custom-tooltip'> Term's and Condition</a></label>   
+             </div>
+             <div class="form-group">            
+              <div class="col-sm-offset-2 col-sm-10">
+                  <button type="submit" class="btn btn-primary" >Submit</button>
+                  <button type="button" class="btn btn-primary" (click)='setDefaultValues()' >Set Default</button>
+                  <button type="button" class="btn btn-primary" (click)='reset(userForm)' >Reset</button>
+
+              </div>
+             </div>
+        </form>
+    </div>
+   {{userForm.valid}}
 </div>

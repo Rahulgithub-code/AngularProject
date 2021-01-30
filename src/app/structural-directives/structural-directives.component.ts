@@ -48,8 +48,8 @@ export class StructuralDirectivesComponent implements OnInit {
       { id: 7, name: 'Orange', price: '150', quantity: '2' },
       { id: 8, name: 'Mango', price: '500', quantity: '5' }]
   }
-  trackById(index: number, fruits: any): string {
-    return fruits.id
+  trackById() {
+    
   }
 
   countryDetails:any[] = [
