@@ -1,0 +1,29 @@
+<h2 class="head-title">HTTP Client - Data from public web API</h2>
+<div class="row">
+
+    <div class="col-md-12">
+        <table border="2" style="width: 800px; height: 400px;">
+            <tbody style="text-align: center;">
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>User-Name</th>
+                    <th>Company-Name</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Website</th>
+
+                </tr>
+                <tr *ngFor='let person of personData'>
+                    <td>{{person.id}}</td>
+                    <td>{{person.name}}</td>
+                    <td>{{person.username}}</td>
+                    <td>{{person.company.name}}</td>
+                    <td>{{person.email}}</td>
+                    <td>{{person.address.street}} {{person.address.suite}} {{person.address.city}} {{person.address.zipcode}}</td>
+                    <td>{{person.website}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -41,6 +41,14 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { HttpComponent } from './http/http.component';
+import {HttpClientModule} from '@angular/common/http'
+import { HttpApiService } from './http-api.service';
+import { HttpCrudComponent } from './http-crud/http-crud.component';
+import {MatTableModule} from '@angular/material/table';
+import {UserService} from './user.service';
+import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
+import {TestData} from './test-data'
 
 @NgModule({
   declarations: [
@@ -68,7 +76,9 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MypipePipe,
     ServerSideRouteComponent,
     ServerRouteComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    HttpComponent,
+    HttpCrudComponent
   ],
   imports: [
     BrowserModule,
@@ -86,9 +96,12 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     ReactiveFormsModule,
     MatRadioModule,
     MatCheckboxModule,
-    MatTooltipModule
+    MatTooltipModule,
+    HttpClientModule,
+    MatTableModule,
+    InMemoryWebApiModule.forRoot(TestData)
   ],
-  providers: [],
+  providers: [HttpApiService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

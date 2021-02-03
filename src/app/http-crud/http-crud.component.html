@@ -1,0 +1,73 @@
+<h2 class="head-title">CRUD Operation with HttpClient API</h2>
+<div class="row">
+    <div class="col-sm-6">
+        <p *ngIf="dataSaved" ngClass = "success">
+            Record save successfully
+        </p>
+        <form class="example-form" [formGroup]='userFormData' (ngSubmit)="onClickSubmit()">
+            <mat-form-field class="example-form">
+                <mat-label>Name</mat-label>
+                <input matInput type="text" formControlName="name"  placeholder="Name" > 
+            </mat-form-field> 
+            <mat-form-field class="example-form">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" formControlName="email"  placeholder="Email" >
+            </mat-form-field>
+            <mat-form-field class="example-form">
+                <mat-label>Address</mat-label>
+                <input matInput type="text" formControlName="address"  placeholder="Address" >
+            </mat-form-field>
+                <button class="BtnSty"  mat-raised-button color="primary" type="submit" >Save</button>
+                <button class="BtnSty"  mat-raised-button color="warn" type="reset" >Reset</button>
+                <button class="BtnSty"  mat-raised-button color="accent" type="button" >Update</button>
+                <mat-icon  class="closeIcon" >close</mat-icon>
+        </form>
+    </div>
+    <div class="col-sm-6">
+        <div *ngIf='userData else loading'>
+        <mat-table [dataSource]="userData" class="mat-elevation-z8">
+            <!-- Position Column -->
+            <ng-container matColumnDef="id">
+              <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+            </ng-container>
+          
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+              <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+            </ng-container>
+          
+            <!-- Weight Column -->
+            <ng-container matColumnDef="email">
+              <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+            </ng-container>
+          
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="address">
+              <mat-header-cell *matHeaderCellDef> Address </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.address}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="action">
+                <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                    <mat-icon class="edit"  matTooltip="Edit " matTooltipPosition='above'>edit</mat-icon> 
+                    <mat-icon class="delete"  matTooltip="Delete " matTooltipPosition='right'>delete</mat-icon>
+                </mat-cell>
+              </ng-container>
+          
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          </mat-table>
+          <button class="add" mat-fab color="primary" >
+            <mat-icon >add</mat-icon>
+          </button>
+        </div>
+        <ng-template #loading>
+            <div>
+                <img src={{imgUrl}} class="loading">
+            </div>
+        </ng-template>
+    </div>
+</div>

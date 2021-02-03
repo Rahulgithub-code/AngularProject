@@ -22,6 +22,8 @@ import { ProgramsComponent } from './programs/programs.component';
 import { ServerSideRouteComponent } from './server-side-route/server-side-route.component';
 import { ServerRouteComponent } from './server-route/server-route.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { HttpComponent } from './http/http.component';
+import { HttpCrudComponent } from './http-crud/http-crud.component';
 
 
 const routes: Routes = [
@@ -47,6 +49,9 @@ const routes: Routes = [
   { path: 'server-side-route', component: ServerSideRouteComponent},
   { path: 'server-side', component: ServerRouteComponent},
   { path: 'reactive-form', component: ReactiveFormComponent},
+  { path: 'http', component: HttpComponent},
+  { path: 'http-crud-operation', component: HttpCrudComponent},
+
   
   { path: '**', component: ErrorPageComponent},
 ];

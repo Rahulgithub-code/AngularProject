@@ -105,6 +105,15 @@ export class AppComponent {
       title: 'Reactive Form'
     },
     {
+      route: '/http',
+      icon: 'home',
+      title: 'HTTP'
+    },{
+      route: '/http-crud-operation',
+      icon: 'home',
+      title: 'HTTP Crud Operation'
+    },
+    {
       route: '/programs',
       icon: 'home',
       title: "Program's"
