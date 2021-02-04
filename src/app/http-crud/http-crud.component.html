@@ -1,31 +1,40 @@
-<h2 class="head-title">CRUD Operation with HttpClient API</h2>
+<h2 class="head-title">CRUD Operation with HttpClient & API</h2>
 <div class="row">
     <div class="col-sm-6">
-        <p *ngIf="dataSaved" ngClass = "success">
-            Record save successfully
-        </p>
+        <div *ngIf="dataSaved" class="alert alert-success" style="width: 75%;">
+          <strong>Success!</strong>  Record save successfully
+        </div>
         <form class="example-form" [formGroup]='userFormData' (ngSubmit)="onClickSubmit()">
             <mat-form-field class="example-form">
                 <mat-label>Name</mat-label>
-                <input matInput type="text" formControlName="name"  placeholder="Name" > 
+                <input matInput  type="text"  formControlName="name"  placeholder="Name" id="test"> 
+                <mat-error *ngIf="userFormData.controls.name.touched">
+                  Name is required !
+                </mat-error>
             </mat-form-field> 
             <mat-form-field class="example-form">
                 <mat-label>Email</mat-label>
                 <input matInput type="email" formControlName="email"  placeholder="Email" >
+                <mat-error *ngIf="!userFormData.hasError('email') || userFormData.hasError('Required') ">
+                  Please enter a valid email address
+                </mat-error>
+
             </mat-form-field>
             <mat-form-field class="example-form">
                 <mat-label>Address</mat-label>
                 <input matInput type="text" formControlName="address"  placeholder="Address" >
+                <mat-error *ngIf="userFormData.controls.address.touched">
+                  Address is required !
+                </mat-error>
             </mat-form-field>
-                <button class="BtnSty"  mat-raised-button color="primary" type="submit" >Save</button>
+                <button class="BtnSty"  mat-raised-button color="primary" type="submit" [disabled]='!userFormData.valid'>Save</button>
                 <button class="BtnSty"  mat-raised-button color="warn" type="reset" >Reset</button>
-                <button class="BtnSty"  mat-raised-button color="accent" type="button" >Update</button>
-                <mat-icon  class="closeIcon" >close</mat-icon>
+
         </form>
     </div>
-    <div class="col-sm-6">
-        <div *ngIf='userData else loading'>
-        <mat-table [dataSource]="userData" class="mat-elevation-z8">
+    <div class="col-sm-6" style="margin-top: 25px;">
+        <div *ngIf='allUser | async  else loading'>
+        <mat-table [dataSource]="allUser | async" class="mat-elevation-z8">
             <!-- Position Column -->
             <ng-container matColumnDef="id">
               <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
@@ -52,8 +61,8 @@
             <ng-container matColumnDef="action">
                 <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
                 <mat-cell *matCellDef="let element">
-                    <mat-icon class="edit"  matTooltip="Edit " matTooltipPosition='above'>edit</mat-icon> 
-                    <mat-icon class="delete"  matTooltip="Delete " matTooltipPosition='right'>delete</mat-icon>
+                    <mat-icon class="edit"  matTooltip="Edit " matTooltipPosition='above' (click)='edit(element.id)'>edit</mat-icon> 
+                    <mat-icon class="delete"  matTooltip="Delete " matTooltipPosition='right' (click)='deleting(element.id)'>delete</mat-icon>
                 </mat-cell>
               </ng-container>
           

@@ -44,14 +44,17 @@ table {
     max-width: 500px;
     width: 100%;
   }
-  
+ 
   .example-full-width {
     width: 100%;
   }
-  .BtnSty{
-    margin-top: 30px; 
-    margin-right: 10px
-  }
+
   mat-form-field {
     margin-right: 12px;
   }
+  input.ng-invalid.ng-touched{
+    border-color: red;
+}
+button{
+    margin: 10px;
+}

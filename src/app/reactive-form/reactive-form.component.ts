@@ -101,7 +101,6 @@ export class ReactiveFormComponent implements OnInit {
   */
   }
   fill(){
-    debugger
     this.regForm.setValue({       //must assign all field value
       Name: 'Rahul',
       email: 'rahulkr.mits@gmail.com',

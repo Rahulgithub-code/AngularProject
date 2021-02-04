@@ -10,7 +10,6 @@ import {Observable} from 'rxjs/Observable'
   styleUrls: ['./http-crud.component.scss']
 })
 export class HttpCrudComponent implements OnInit {
-  userData: User[];
   displayedColumns: string[] = ['id', 'name', 'email', 'address', 'action'];
   imgUrl = '/assets/images/Loading.gif'
   dataSaved:boolean=false;
@@ -21,26 +20,62 @@ export class HttpCrudComponent implements OnInit {
   constructor(private formbuilder:FormBuilder,private userService: UserService) { }
 
   ngOnInit(): void {
-    this.getData();
     this.userFormData=this.formbuilder.group(
       {
-        name: [null,[Validators.required]],
-        email: [null,[Validators.required]],
-        address: [null, [Validators.required]]
+        name: ['',[Validators.required]],
+        email: ['',[Validators.required, Validators.email]],
+        address: ['', [Validators.required]]
       }
     )
+    this.getData();
   }
 
   getData() {
-    this.userService.getUserDataFromMemory().subscribe(user => {
-      this.userData = user
-      console.log(this.userData)
-    })
+    // this.userService.getUserDataFromMemory().subscribe(user => {
+    //   this.userData = user
+    //   console.log(this.userData)
+    // })
+    this.allUser = this.userService.getUserDataFromMemory()
   }
  public onClickSubmit(){
+   
    this.dataSaved=false;
-   console.log(this.userFormData.value)
+   let user=this.userFormData.value
+   this.createUser(user)
    this.userFormData.reset()
    
+ }
+ createUser(user:User){
+   if(this.userIdToUpdate==null){
+    this.userService.createUser(user).subscribe(user => {
+      this.dataSaved=true;
+      this.getData()
+      this.userIdToUpdate=null
+    })
+   }
+   else {
+     user.id = this.userIdToUpdate;
+     this.userService.updateUser(user).subscribe(user => {
+       this.dataSaved==true;
+       this.getData()
+       this.userIdToUpdate=null
+     })
+   }
+ }
+
+ userIdToUpdate=null
+ edit(userId){
+   this.userService.getUserId(userId).subscribe(user=> {
+     this.userIdToUpdate=userId
+     this.userFormData.controls['name'].setValue(user.name);
+     this.userFormData.controls['email'].setValue(user.email);
+     this.userFormData.controls['address'].setValue(user.address);
+    })
+ }
+ deleting(userId){
+   this.userService.deleteUser(userId).subscribe(user => {
+     this.getData()
+   })
+
  }
 }
